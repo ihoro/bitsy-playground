@@ -1,9 +1,17 @@
 version: '3.3'
 
+networks:
+  net:
+
 services:
 
   db:
     build: db
     command: conf/gremlin-server-bitsy.yaml
-    ports:
-      - 8182:8182
+    networks:
+      - net
+
+  test:
+    build: test
+    networks:
+      - net
