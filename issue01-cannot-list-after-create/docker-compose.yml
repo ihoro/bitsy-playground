@@ -1,0 +1,9 @@
+version: '3.3'
+
+services:
+
+  db:
+    build: db
+    command: conf/gremlin-server-bitsy.yaml
+    ports:
+      - 8182:8182
